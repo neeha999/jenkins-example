@@ -7,21 +7,21 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn clean compile'
+                    sh 'mvn clean compile sonar:sonar'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn test'
+                    sh 'mvn test sonar:sonar'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                    sh 'mvn deploy'
+                    sh 'mvn deploy sonar:sonar'
             }
         }
     }
