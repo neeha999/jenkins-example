@@ -14,14 +14,14 @@ pipeline {
         stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn test sonar:sonar'
+                    sh 'mvn test -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                    sh 'mvn deploy sonar:sonar'
+                    sh 'mvn deploy -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
             }
         }
     }
