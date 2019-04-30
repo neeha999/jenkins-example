@@ -7,7 +7,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn clean compile sonar:sonar'
+                    sh 'mvn clean compile -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
             }
         }
 
