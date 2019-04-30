@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools{
         maven 'maven'
-        sonarQube 'sonar'
+        sonar scanner 'sonar'
     }
     stages {
         stage ('Compile Stage') {
