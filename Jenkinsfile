@@ -7,21 +7,21 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn clean compile -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
+                    sh 'mvn clean compile sonar:sonar'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn test -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
+                    sh 'mvn test sonar:sonar'
             }
         }
 
 
         stage ('Deployment Stage') {
             steps {
-                    sh 'mvn deploy -Dsonar:sonar -Dsonar.url=http://35.185.76.118:9000'
+                    sh 'mvn deploy sonar:sonar'
             }
         }
     }
