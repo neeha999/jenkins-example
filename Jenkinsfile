@@ -7,14 +7,14 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn clean compile sonar:sonar -X'
+                    sh 'mvn clean compile sonar:sonar -Dsonar.login=admin -Dsonar.password=admin -Dsonar.host.url=http://104.196.173.188:9000'
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn test sonar:sonar'
+                    sh 'mvn test'
             }
         }
 
