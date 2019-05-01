@@ -7,7 +7,7 @@ pipeline {
         stage ('Compile Stage') {
 
             steps {
-                    sh 'mvn clean compile sonar:sonar'
+                    sh 'mvn clean compile sonar:sonar -X'
             }
         }
 
